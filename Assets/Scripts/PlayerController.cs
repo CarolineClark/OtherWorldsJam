@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	// Use this for initialization
+	public float speed = 1;
+	CharacterController characterController;
 	void Start () {
-		
+		characterController = GetComponent<CharacterController>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
+		float horizontal = Input.GetAxis("Horizontal") * speed;
+		float vertical = Input.GetAxis("Vertical") * speed;
+		characterController.Move(new Vector3(horizontal, vertical, 0));
 	}
 }
