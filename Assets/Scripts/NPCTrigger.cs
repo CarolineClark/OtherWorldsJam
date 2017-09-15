@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour {
 
-	// Use this for initialization
+	Transform player = null;
+	CharacterController characterController;
+	public float speed;
+
 	void Start () {
-		
+		characterController = GetComponent<CharacterController>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		
+		if (player == null) {
+			return;
+		}
+
+		Vector3 diff = Vector3.Normalize(transform.position - player.position);
+		characterController.Move(-1 * diff * speed);
 	}
 
 	void OnTriggerEnter(Collider collider) {
-		Debug.Log("hit");
 		if (collider.tag == Constants.PLAYER_TAG) {
-			Debug.Log("test");
+			player = collider.transform;
 		}
 	}
 }
