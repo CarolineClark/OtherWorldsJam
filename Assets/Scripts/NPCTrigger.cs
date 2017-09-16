@@ -12,16 +12,18 @@ public class NPCTrigger : MonoBehaviour {
     public float closeDistance = 0.1f;
     public GameObject NPCDeath;
     private Vector3 startPos;
+    private bool hasLevelEnded = false;
 
 	void Start () {
         startPos = transform.position;
 		characterController = GetComponent<CharacterController>();
         particleSystem = GetComponent<ParticleSystem>();
         EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
-	}
+        EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+    }
 	
 	void Update () {
-		if (player == null && Vector3.Distance(transform.position, startPos) < closeDistance) {
+		if (hasLevelEnded || (player == null && Vector3.Distance(transform.position, startPos) < closeDistance)) {
 			return;
 		}
 
@@ -59,5 +61,10 @@ public class NPCTrigger : MonoBehaviour {
     public void PlayerDied(Hashtable hash)
     {
         player = null;
+    }
+
+    private void HandleEndLevel(Hashtable h)
+    {
+        hasLevelEnded = true;
     }
 }

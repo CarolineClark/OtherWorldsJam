@@ -7,14 +7,18 @@ public class CrosshairController : MonoBehaviour {
 	public float speed = 1;
     private Camera cam;
 	CharacterController characterController;
+    private bool hasLevelEnded = false;
 
-
-	void Start () {
+    void Start () {
 		characterController = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
-	}
+        EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+    }
 	
 	void Update () {
+        if (hasLevelEnded) {
+            return;
+        }
         
         float horizontal = Input.GetAxis(Constants.CROSSHAIR_HORIZONTAL_INPUT) * speed;
 		float vertical = Input.GetAxis(Constants.CROSSHAIR_VERTICAL_INPUT) * speed;
@@ -64,4 +68,9 @@ public class CrosshairController : MonoBehaviour {
 
         transform.position = newPos;
     }
- }
+
+    private void HandleEndLevel(Hashtable h)
+    {
+        hasLevelEnded = true;
+    }
+}
