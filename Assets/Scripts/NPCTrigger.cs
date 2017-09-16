@@ -9,7 +9,7 @@ public class NPCTrigger : MonoBehaviour {
 	public float speed;
 
 	void Start () {
-		characterController = GetComponent<CharacterController>();
+		characterController = GetComponent<CharacterController>();	
 	}
 	
 	void Update () {
@@ -25,5 +25,9 @@ public class NPCTrigger : MonoBehaviour {
 		if (collider.tag == Constants.PLAYER_TAG) {
 			player = collider.transform;
 		}
+	}
+
+	public void Kill() {
+		Debug.Log("Killed!");
 	}
 }

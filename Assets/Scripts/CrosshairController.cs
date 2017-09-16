@@ -15,4 +15,6 @@ public class CrosshairController : MonoBehaviour {
 		float vertical = Input.GetAxis("VerticalController") * speed;
 		characterController.Move(new Vector3(horizontal, vertical, 0));
 	}
+
+	
 }
