@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	[FMODUnity.EventRef]
+	public string humanPlayerFootsteps = null;
+	FMOD.Studio.EventInstance playerFootsteps;
+
+
 	public float speed = 1;
     public float rotationSpeed = 1;
     public float hits = 0;
@@ -21,10 +26,17 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator>();
         Reset();
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+
+
+		playerFootsteps = FMODUnity.RuntimeManager.CreateInstance (humanPlayerFootsteps);
+
+		playerFootsteps.start ();
+		playerFootsteps.setParameterValue ("velocity", 0);
 	}
 	
 	void Update () {
         if (hasLevelEnded) {
+			playerFootsteps.setParameterValue ("velocity", 0);
             return;
         }
 
@@ -32,6 +44,15 @@ public class PlayerController : MonoBehaviour {
 		float vertical = Input.GetAxis(Constants.PLAYER_VERTICAL_INPUT) * speed;
 
 		Vector3 velocity = new Vector3(horizontal, vertical, 0);
+		if (velocity.magnitude > 0) 
+		{
+			playerFootsteps.setParameterValue ("velocity", 1);
+		} 
+		else 
+		{
+			playerFootsteps.setParameterValue ("velocity", 0);
+		}
+
 		animator.SetBool(Constants.ANIMATION_TRANSITION_MOVE, (velocity.magnitude > 0));
 		characterController.Move(velocity);
 

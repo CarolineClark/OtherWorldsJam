@@ -25,6 +25,9 @@ public class NormalDeath : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
+
+	
+
         yield return new WaitForSeconds(2f);
 
         Destroy(gameObject);

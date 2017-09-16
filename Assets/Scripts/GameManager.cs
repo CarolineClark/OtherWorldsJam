@@ -5,6 +5,9 @@ using System.Collections;
 
 public class GameManager: MonoBehaviour {
     
+	[FMODUnity.EventRef]
+	public string atmos = null;
+
     private GameObject player;
     private Vector3 respawnPoint;
     private int deaths = 0;
@@ -42,6 +45,13 @@ public class GameManager: MonoBehaviour {
         EventManager.StartListening(Constants.EVENT_NPC_DIE, NPCDied);
 
         EventManager.StartListening(Constants.EVENT_CHANGE_RESPAWN_POINT, ChangeRespawnPoint);
+
+		FMOD.Studio.EventInstance atmosphere;
+
+		atmosphere = FMODUnity.RuntimeManager.CreateInstance (atmos);
+
+		atmosphere.start ();
+
     }
 
     void PlayerHit(Hashtable h) {
