@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class NPCTrigger : MonoBehaviour {
 
+	[FMODUnity.EventRef]
+	public string enemyDeathEvent = null;
+
+
+
 	Transform player = null;
 	CharacterController characterController;
     ParticleSystem particleSystem;
@@ -65,7 +70,12 @@ public class NPCTrigger : MonoBehaviour {
         else {
             Instantiate(NormalDeath).transform.position = transform.position;
         }
+
+		FMODUnity.RuntimeManager.PlayOneShotAttached (enemyDeathEvent, gameObject);
         DestroyImmediate(gameObject);
+
+
+
 	}
 
     public void PlayerDied(Hashtable hash)

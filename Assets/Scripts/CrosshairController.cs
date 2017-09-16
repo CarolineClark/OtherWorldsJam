@@ -17,6 +17,11 @@ public class CrosshairController : MonoBehaviour {
     LaserBarFill laserBarUi;
     ParticleLauncher laser;
 
+	[FMODUnity.EventRef]
+	public string lasorFire = null;
+	private FMOD.Studio.EventInstance alienLasor;
+
+
     void Start () {
         laserLeft = maxLaser;
 		characterController = GetComponent<CharacterController>();
@@ -25,6 +30,8 @@ public class CrosshairController : MonoBehaviour {
         laserBarUi = GameObject.FindGameObjectWithTag(Constants.UI_LASER_BAR).GetComponent<LaserBarFill>();
         laser = GetComponentInChildren<ParticleLauncher>();
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+
+		alienLasor = FMODUnity.RuntimeManager.CreateInstance (lasorFire);
     }
 	
 	void Update () {
@@ -48,10 +55,14 @@ public class CrosshairController : MonoBehaviour {
 	void LaserLogic() {
 		if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
             laserLeft -= laserReductionSpeed * Time.deltaTime;
-            if (laserLeft > 0) {
-                laser.Fire();
-                CheckIfLaserHitAnything();
-            }
+			if (laserLeft > 0) {
+				laser.Fire ();
+				alienLasor.setParameterValue ("buttonHold", 1);
+				CheckIfLaserHitAnything ();
+			} else {
+				//
+				alienLasor.setParameterValue ("buttonHold", 0);
+			}
 
 		} else {
             laserLeft += laserChargingSpeed * Time.deltaTime;
@@ -59,6 +70,7 @@ public class CrosshairController : MonoBehaviour {
         laserBarUi.ShowPercentageOfElement(laserLeft);
 	}
 
+	//---------------------------------Audio---------------------------------//
     void CheckIfLaserHitAnything() {
         RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
         foreach (RaycastHit hit in hits) {
@@ -75,6 +87,8 @@ public class CrosshairController : MonoBehaviour {
             }
         }
     }
+	//---------------------------------Audio---------------------------------//
+
 
     void KeepCrosshairOnScreen() {
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
