@@ -17,6 +17,6 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void Kill() {
-		Debug.Log("Player killed!");
+		EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
 	}
 }

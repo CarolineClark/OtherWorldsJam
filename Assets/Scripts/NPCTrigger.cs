@@ -42,6 +42,7 @@ public class NPCTrigger : MonoBehaviour {
 	}
 
 	public void Kill() {
+		EventManager.TriggerEvent(Constants.EVENT_NPC_DIE);
 		Destroy(gameObject);
 	}
 }
