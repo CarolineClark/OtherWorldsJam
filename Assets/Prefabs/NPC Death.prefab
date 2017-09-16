@@ -53,6 +53,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a833b78bcd953d34aa28e3779c0ecf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPrefabs:
+  - {fileID: 1993749236328988, guid: 18d162787bdbf9a4484d8859b929c4ce, type: 2}
+  minSize: 0.2
+  maxSize: 0.25
 --- !u!198 &198950404125676740
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -112,7 +116,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1095019826
+  randomSeed: 284825695
   InitialModule:
     serializedVersion: 3
     enabled: 1
