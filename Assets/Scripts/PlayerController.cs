@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 		float vertical = Input.GetAxis(Constants.PLAYER_VERTICAL_INPUT) * speed;
 
 		Vector3 velocity = new Vector3(horizontal, vertical, 0);
-		animator.SetBool("move", (velocity.magnitude > 0));
+		animator.SetBool(Constants.ANIMATION_TRANSITION_MOVE, (velocity.magnitude > 0));
 		characterController.Move(velocity);
 
         transform.rotation = Quaternion.LookRotation(

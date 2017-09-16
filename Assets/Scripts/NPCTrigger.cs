@@ -13,11 +13,13 @@ public class NPCTrigger : MonoBehaviour {
     public GameObject NPCDeath;
     private Vector3 startPos;
     private bool hasLevelEnded = false;
+    Animator animator;
 
 	void Start () {
         startPos = transform.position;
 		characterController = GetComponent<CharacterController>();
         particleSystem = GetComponent<ParticleSystem>();
+        animator = GetComponent<Animator>();
         EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
     }
@@ -30,7 +32,10 @@ public class NPCTrigger : MonoBehaviour {
         Vector3 targetPos = player != null ? player.position : startPos;
         
 		Vector3 direction = Vector3.Normalize(transform.position - targetPos);
-		characterController.Move(-1 * direction * speed);
+        Vector3 velocity = -1 * direction * speed;
+		characterController.Move(velocity);
+
+        animator.SetBool(Constants.ANIMATION_TRANSITION_MOVE, (velocity.magnitude > 0));
 
         transform.rotation = Quaternion.LookRotation(
             Vector3.RotateTowards(
