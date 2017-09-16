@@ -6,12 +6,14 @@ public class CrosshairController : MonoBehaviour {
 
 	public float speed = 1;
     private Camera cam;
+    private Vector3 oldCamPos;
 	CharacterController characterController;
     private bool hasLevelEnded = false;
 
     void Start () {
 		characterController = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
+        oldCamPos = cam.transform.position;
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
     }
 	
@@ -65,6 +67,9 @@ public class CrosshairController : MonoBehaviour {
         if (screenPos.y > Screen.height) {
             newPos.y = cam.ScreenToWorldPoint(new Vector3(screenPos.x, Screen.height, screenPos.z)).y;
         }
+
+        newPos += cam.transform.position - oldCamPos;
+        oldCamPos = cam.transform.position;
 
         transform.position = newPos;
     }
