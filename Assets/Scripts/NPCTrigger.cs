@@ -47,7 +47,7 @@ public class NPCTrigger : MonoBehaviour {
     }
 
 	void OnTriggerEnter(Collider collider) {
-		if (collider.tag == Constants.PLAYER_TAG) {
+		if (collider.tag == Constants.PLAYER_TO_NPC_TAG) {
 			player = collider.transform;
 		}
 	}
