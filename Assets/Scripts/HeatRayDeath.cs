@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCDeath : MonoBehaviour
+public class HeatRayDeath : MonoBehaviour
 {
     public GameObject[] deathPrefabs;
     public float minSize = 0.2f;

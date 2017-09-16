@@ -42,10 +42,10 @@ public class CrosshairController : MonoBehaviour {
 
                 GameObject other = hit.transform.gameObject;
                 if (other.tag == Constants.NPC_TAG) {
-                    other.GetComponent<NPCTrigger>().Kill();
+                    other.GetComponent<NPCTrigger>().Kill(true);
                 }
                 else if (other.tag == Constants.PLAYER_TAG) {
-                    other.GetComponentInParent<PlayerController>().Kill();
+                    other.GetComponentInParent<PlayerController>().Kill(true);
                 }
             }
 		}

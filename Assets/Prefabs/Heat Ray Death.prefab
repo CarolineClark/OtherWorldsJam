@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199158152963086498}
   - component: {fileID: 198950404125676740}
   m_Layer: 0
-  m_Name: NPC Death
+  m_Name: Heat Ray Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

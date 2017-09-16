@@ -10,7 +10,8 @@ public class NPCTrigger : MonoBehaviour {
 	public float speed;
     public float rotationSpeed = 1f;
     public float closeDistance = 0.1f;
-    public GameObject NPCDeath;
+    public GameObject HeatRayDeath;
+    public GameObject NormalDeath;
     private Vector3 startPos;
     private bool hasLevelEnded = false;
     Animator animator;
@@ -57,10 +58,15 @@ public class NPCTrigger : MonoBehaviour {
 		}
 	}
 
-	public void Kill() {
+	public void Kill(bool isHeatRayDeath = false) {
 		EventManager.TriggerEvent(Constants.EVENT_NPC_DIE);
-        Instantiate(NPCDeath).transform.position = transform.position;
-		DestroyImmediate(gameObject);
+        if (isHeatRayDeath) {
+            Instantiate(HeatRayDeath).transform.position = transform.position;
+        }
+        else {
+            Instantiate(NormalDeath).transform.position = transform.position;
+        }
+        DestroyImmediate(gameObject);
 	}
 
     public void PlayerDied(Hashtable hash)
