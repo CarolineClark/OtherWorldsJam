@@ -42,6 +42,6 @@ public class NPCTrigger : MonoBehaviour {
 	}
 
 	public void Kill() {
-		Debug.Log("NPC Killed!");
+		Destroy(gameObject);
 	}
 }
