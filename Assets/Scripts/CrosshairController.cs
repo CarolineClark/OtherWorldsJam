@@ -48,7 +48,6 @@ public class CrosshairController : MonoBehaviour {
 	void LaserLogic() {
 		if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
             laserLeft -= laserReductionSpeed * Time.deltaTime;
-
             if (laserLeft > 0) {
                 laser.Fire();
                 CheckIfLaserHitAnything();
@@ -69,10 +68,10 @@ public class CrosshairController : MonoBehaviour {
 
             GameObject other = hit.transform.gameObject;
             if (other.tag == Constants.NPC_TAG) {
-                other.GetComponent<NPCTrigger>().Kill();
+                other.GetComponent<NPCTrigger>().Kill(true);
             }
             else if (other.tag == Constants.PLAYER_TAG) {
-                other.GetComponentInParent<PlayerController>().Kill();
+                other.GetComponentInParent<PlayerController>().Kill(true);
             }
         }
     }
