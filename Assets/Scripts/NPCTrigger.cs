@@ -28,6 +28,6 @@ public class NPCTrigger : MonoBehaviour {
 	}
 
 	public void Kill() {
-		Debug.Log("Killed!");
+		Debug.Log("NPC Killed!");
 	}
 }
