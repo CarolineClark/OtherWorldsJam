@@ -18,4 +18,6 @@ public class Constants
 
     public static string EVENT_END_LEVEL = "end_level";
     public static string EVENT_CHANGE_RESPAWN_POINT = "change_respawn_point";
+
+    public static string UI_LASER_BAR = "laser_bar_ui";
 }

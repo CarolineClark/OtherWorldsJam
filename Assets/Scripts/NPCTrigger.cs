@@ -30,7 +30,6 @@ public class NPCTrigger : MonoBehaviour {
 		}
 
         Vector3 targetPos = player != null ? player.position : startPos;
-        
 		Vector3 direction = Vector3.Normalize(transform.position - targetPos);
         Vector3 velocity = -1 * direction * speed;
 		characterController.Move(velocity);

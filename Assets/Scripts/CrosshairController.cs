@@ -5,15 +5,25 @@ using UnityEngine;
 public class CrosshairController : MonoBehaviour {
 
 	public float speed = 1;
+    private float laserReductionSpeed = 0.3f;
+    private float laserChargingSpeed = 0.15f;
     private Camera cam;
     private Vector3 oldCamPos;
 	CharacterController characterController;
     private bool hasLevelEnded = false;
+    private float maxLaser = 1;
+    private float minLaser = 0;
+    private float laserLeft;
+    LaserBarFill laserBarUi;
+    ParticleLauncher laser;
 
     void Start () {
+        laserLeft = maxLaser;
 		characterController = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
         oldCamPos = cam.transform.position;
+        laserBarUi = GameObject.FindGameObjectWithTag(Constants.UI_LASER_BAR).GetComponent<LaserBarFill>();
+        laser = GetComponentInChildren<ParticleLauncher>();
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
     }
 	
@@ -28,28 +38,44 @@ public class CrosshairController : MonoBehaviour {
 
         KeepCrosshairOnScreen();
         
-        CheckIfLaserHitsAnything();
+        if (laserLeft <= 0) {
+            laserLeft = 0;
+        }
+
+        LaserLogic();
     }
 
-	void CheckIfLaserHitsAnything() {
+	void LaserLogic() {
 		if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
-            
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
-            foreach (RaycastHit hit in hits) {
-                if (hit.transform == null) {
-                    continue;
-                }
+            laserLeft -= laserReductionSpeed * Time.deltaTime;
 
-                GameObject other = hit.transform.gameObject;
-                if (other.tag == Constants.NPC_TAG) {
-                    other.GetComponent<NPCTrigger>().Kill();
-                }
-                else if (other.tag == Constants.PLAYER_TAG) {
-                    other.GetComponentInParent<PlayerController>().Kill();
-                }
+            if (laserLeft > 0) {
+                laser.Fire();
+                CheckIfLaserHitAnything();
             }
-		}
+
+		} else {
+            laserLeft += laserChargingSpeed * Time.deltaTime;
+        }
+        laserBarUi.ShowPercentageOfElement(laserLeft);
 	}
+
+    void CheckIfLaserHitAnything() {
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
+        foreach (RaycastHit hit in hits) {
+            if (hit.transform == null) {
+                continue;
+            }
+
+            GameObject other = hit.transform.gameObject;
+            if (other.tag == Constants.NPC_TAG) {
+                other.GetComponent<NPCTrigger>().Kill();
+            }
+            else if (other.tag == Constants.PLAYER_TAG) {
+                other.GetComponentInParent<PlayerController>().Kill();
+            }
+        }
+    }
 
     void KeepCrosshairOnScreen() {
         Vector3 screenPos = cam.WorldToScreenPoint(transform.position);
