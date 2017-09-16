@@ -33,3 +33,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 .vscode
+
+# different input settings across computers 
+ProjectSettings/InputManager.asset
