@@ -12,4 +12,6 @@ public class Constants {
     public static string EVENT_PLAYER_HIT = "player_hit";
     public static string EVENT_PLAYER_DIE = "player_died";
     public static string EVENT_NPC_DIE = "npc_died";
+
+    public static string EVENT_CHANGE_RESPAWN_POINT = "change_respawn_point";
 }

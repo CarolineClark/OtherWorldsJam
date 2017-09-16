@@ -7,7 +7,6 @@ public class CameraController : MonoBehaviour {
 	GameObject player;
 	Vector3 offset = new Vector3(0, 0, -10);
 	float shake;
-	float shakeAmount = 1f;
 	float decreaseFactor = 2f;
 	float magnitude = 1f;
 

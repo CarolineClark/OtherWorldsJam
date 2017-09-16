@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
+        Reset();
 	}
 	
 	void Update () {
@@ -42,9 +43,15 @@ public class PlayerController : MonoBehaviour {
         if (invincibleTimeLeft > 0) {
             CountDownInvincibility();
         }
-	}
+    }
 
-	public void Kill() {
+    public void Reset()
+    {
+        hits = 0;
+        invincibleTimeLeft = invinciblityTime;
+    }
+
+    public void Kill() {
         if (invincibleTimeLeft > 0) {
             return;
         }
@@ -58,7 +65,7 @@ public class PlayerController : MonoBehaviour {
         }
 	}
 
-    public void CountDownInvincibility()
+    private void CountDownInvincibility()
     {
         invincibleTimeLeft -= Time.deltaTime;
         if (invincibleTimeLeft < 0) {
