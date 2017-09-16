@@ -11,16 +11,18 @@ public class NPCDeath : MonoBehaviour
 	void Start ()
     {
         int total = deathPrefabs.Length;
-
+        
         GameObject prefab = Instantiate(deathPrefabs[Random.Range(0, total)]);
         prefab.transform.position = transform.position;
         float size = Random.Range(minSize, maxSize);
         prefab.transform.localScale = new Vector3(size, size, 1);
         prefab.transform.Rotate(0, 0, Random.Range(0, 360f));
 
+        float colour = Random.Range(0f, 0.2f);
+        prefab.GetComponent<SpriteRenderer>().color = new Color(colour, colour, colour, 0.2f);
 
-        // StartCoroutine(DestroyObject());
-	}
+        StartCoroutine(DestroyObject());
+    }
 
     IEnumerator DestroyObject()
     {

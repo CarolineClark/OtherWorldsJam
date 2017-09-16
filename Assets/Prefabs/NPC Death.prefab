@@ -55,6 +55,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefabs:
   - {fileID: 1993749236328988, guid: 18d162787bdbf9a4484d8859b929c4ce, type: 2}
+  - {fileID: 1380059731740272, guid: 34b22f21ea882854a9d0f4c1051f0165, type: 2}
+  - {fileID: 1965885186986218, guid: 9a6486258034eb64396ab6a95e58546c, type: 2}
+  - {fileID: 1039457453438156, guid: d10de93f95e0b604d8a04c6a92bd4a4f, type: 2}
+  - {fileID: 1078616339095900, guid: a64a1f31111929445aea493bb524304f, type: 2}
+  - {fileID: 1223513287356500, guid: db394ddc664b6f146bbe8fb8c5528aef, type: 2}
+  - {fileID: 1993749236328988, guid: 18d162787bdbf9a4484d8859b929c4ce, type: 2}
+  - {fileID: 1993749236328988, guid: 18d162787bdbf9a4484d8859b929c4ce, type: 2}
   minSize: 0.2
   maxSize: 0.25
 --- !u!198 &198950404125676740
