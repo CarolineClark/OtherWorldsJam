@@ -8,17 +8,23 @@ public class NPCTrigger : MonoBehaviour {
 	CharacterController characterController;
 	public float speed;
     public float rotationSpeed = 1f;
+    public float closeDistance = 0.1f;
+    private Vector3 startPos;
 
 	void Start () {
-		characterController = GetComponent<CharacterController>();	
+        startPos = transform.position;
+		characterController = GetComponent<CharacterController>();
+        EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
 	}
 	
 	void Update () {
-		if (player == null) {
+		if (player == null && Vector3.Distance(transform.position, startPos) < closeDistance) {
 			return;
 		}
+
+        Vector3 targetPos = player != null ? player.position : startPos;
         
-		Vector3 direction = Vector3.Normalize(transform.position - player.position);
+		Vector3 direction = Vector3.Normalize(transform.position - targetPos);
 		characterController.Move(-1 * direction * speed);
 
         transform.rotation = Quaternion.LookRotation(
@@ -45,4 +51,9 @@ public class NPCTrigger : MonoBehaviour {
 		EventManager.TriggerEvent(Constants.EVENT_NPC_DIE);
 		Destroy(gameObject);
 	}
+
+    public void PlayerDied(Hashtable hash)
+    {
+        player = null;
+    }
 }

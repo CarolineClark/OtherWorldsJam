@@ -583,12 +583,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
-    - target: {fileID: 114081983746019550, guid: d6612ca08f7924ab0a2c8ddb45beee9f,
-        type: 2}
-      propertyPath: playerPrefab
-      value: 
-      objectReference: {fileID: 1364379182735692, guid: c4cc215696ae44743b775849eb495c76,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6612ca08f7924ab0a2c8ddb45beee9f, type: 2}
   m_IsPrefabParent: 0
@@ -731,11 +725,6 @@ Prefab:
     - target: {fileID: 1342295690749746, guid: 931679299d6d4004f961a452240def97, type: 2}
       propertyPath: m_Name
       value: Respawn Area (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 65653010937747850, guid: 931679299d6d4004f961a452240def97,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 931679299d6d4004f961a452240def97, type: 2}
