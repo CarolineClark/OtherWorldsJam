@@ -182,7 +182,7 @@ InputManager:
     axis: 1
     joyNum: 1
   - serializedVersion: 3
-    m_Name: LaserCrosshairButton
+    m_Name: CrosshairButtonX
     descriptiveName: 'X on crosshair controller '
     descriptiveNegativeName: 
     negativeButton: 
