@@ -145,8 +145,8 @@ MonoBehaviour:
   speed: 0.2
   rotationSpeed: 1
   hits: 0
-  invinciblityTime: 2
   lives: 2
+  invinciblityTime: 2
 --- !u!143 &143508977578233188
 CharacterController:
   m_ObjectHideFlags: 1
