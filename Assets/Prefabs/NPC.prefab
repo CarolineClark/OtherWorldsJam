@@ -86,6 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.15
   rotationSpeed: 1
+  closeDistance: 0.1
+  NPCDeath: {fileID: 1741645137876174, guid: 999a5c358c9933543bf1bc37eccb5bc1, type: 2}
 --- !u!143 &143018412410815958
 CharacterController:
   m_ObjectHideFlags: 1

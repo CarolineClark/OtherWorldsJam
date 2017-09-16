@@ -7,9 +7,8 @@ public class CameraController : MonoBehaviour {
 	GameObject player;
 	Vector3 offset = new Vector3(0, 0, -10);
 	float shake;
-	float shakeAmount = 1f;
-	float decreaseFactor = 2f;
-	float magnitude = 1f;
+	public float decreaseFactor = 2f;
+	public float magnitude = 0.5f;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag(Constants.PLAYER_TAG);

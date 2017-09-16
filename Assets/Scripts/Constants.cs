@@ -1,5 +1,7 @@
-public class Constants {
+public class Constants
+{
     public static string PLAYER_TAG = "Player";
+    public static string PLAYER_TO_NPC_TAG = "PlayerToNPC";
     public static string NPC_TAG = "NPC";
     public static string CROSSHAIR_HORIZONTAL_INPUT = "HorizontalCrosshair";
     public static string CROSSHAIR_VERTICAL_INPUT = "VerticalCrosshair";
@@ -9,6 +11,10 @@ public class Constants {
     public static string PLAYER_FIRE1_INPUT = "FirePlayer1";
 
 
+    public static string EVENT_PLAYER_HIT = "player_hit";
     public static string EVENT_PLAYER_DIE = "player_died";
     public static string EVENT_NPC_DIE = "npc_died";
+
+    public static string EVENT_END_LEVEL = "end_level";
+    public static string EVENT_CHANGE_RESPAWN_POINT = "change_respawn_point";
 }

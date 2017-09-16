@@ -6,15 +6,26 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 1;
     public float rotationSpeed = 1;
+    public float hits = 0;
+    public float lives = 2;
+    public float invinciblityTime = 2f;
+    private float invincibleTimeLeft = 0f;
+    private bool hasLevelEnded = false;
 
-	CharacterController characterController;
+    CharacterController characterController;
 	Animator animator;
 	void Start () {
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
+        Reset();
+        EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
 	}
 	
 	void Update () {
+        if (hasLevelEnded) {
+            return;
+        }
+
 		float horizontal = Input.GetAxis(Constants.PLAYER_HORIZONTAL_INPUT) * speed;
 		float vertical = Input.GetAxis(Constants.PLAYER_VERTICAL_INPUT) * speed;
 
@@ -34,9 +45,42 @@ public class PlayerController : MonoBehaviour {
         Vector3 eulerAngles = transform.rotation.eulerAngles;
         eulerAngles = new Vector3(0, 0, eulerAngles.z);
         transform.rotation = Quaternion.Euler(eulerAngles);
+
+        if (invincibleTimeLeft > 0) {
+            CountDownInvincibility();
+        }
+    }
+
+    public void Reset()
+    {
+        hits = 0;
+        invincibleTimeLeft = invinciblityTime;
+    }
+
+    public void Kill() {
+        if (invincibleTimeLeft > 0) {
+            return;
+        }
+
+        hits ++;
+        invincibleTimeLeft = invinciblityTime;
+        EventManager.TriggerEvent(Constants.EVENT_PLAYER_HIT);
+
+        if (hits >= lives) {
+            EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
+        }
 	}
 
-	public void Kill() {
-		EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
-	}
+    private void CountDownInvincibility()
+    {
+        invincibleTimeLeft -= Time.deltaTime;
+        if (invincibleTimeLeft < 0) {
+            invincibleTimeLeft = 0;
+        }
+    }
+
+    private void HandleEndLevel(Hashtable h)
+    {
+        hasLevelEnded = true;
+    }
 }

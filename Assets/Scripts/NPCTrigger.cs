@@ -6,19 +6,30 @@ public class NPCTrigger : MonoBehaviour {
 
 	Transform player = null;
 	CharacterController characterController;
+    ParticleSystem particleSystem;
 	public float speed;
     public float rotationSpeed = 1f;
+    public float closeDistance = 0.1f;
+    public GameObject NPCDeath;
+    private Vector3 startPos;
+    private bool hasLevelEnded = false;
 
 	void Start () {
-		characterController = GetComponent<CharacterController>();	
-	}
+        startPos = transform.position;
+		characterController = GetComponent<CharacterController>();
+        particleSystem = GetComponent<ParticleSystem>();
+        EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
+        EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+    }
 	
 	void Update () {
-		if (player == null) {
+		if (hasLevelEnded || (player == null && Vector3.Distance(transform.position, startPos) < closeDistance)) {
 			return;
 		}
+
+        Vector3 targetPos = player != null ? player.position : startPos;
         
-		Vector3 direction = Vector3.Normalize(transform.position - player.position);
+		Vector3 direction = Vector3.Normalize(transform.position - targetPos);
 		characterController.Move(-1 * direction * speed);
 
         transform.rotation = Quaternion.LookRotation(
@@ -36,13 +47,24 @@ public class NPCTrigger : MonoBehaviour {
     }
 
 	void OnTriggerEnter(Collider collider) {
-		if (collider.tag == Constants.PLAYER_TAG) {
+		if (collider.tag == Constants.PLAYER_TO_NPC_TAG) {
 			player = collider.transform;
 		}
 	}
 
 	public void Kill() {
 		EventManager.TriggerEvent(Constants.EVENT_NPC_DIE);
-		Destroy(gameObject);
+        Instantiate(NPCDeath).transform.position = transform.position;
+		DestroyImmediate(gameObject);
 	}
+
+    public void PlayerDied(Hashtable hash)
+    {
+        player = null;
+    }
+
+    private void HandleEndLevel(Hashtable h)
+    {
+        hasLevelEnded = true;
+    }
 }

@@ -6,15 +6,21 @@ public class CrosshairController : MonoBehaviour {
 
 	public float speed = 1;
     private Camera cam;
+    private Vector3 oldCamPos;
 	CharacterController characterController;
+    private bool hasLevelEnded = false;
 
-
-	void Start () {
+    void Start () {
 		characterController = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
-	}
+        oldCamPos = cam.transform.position;
+        EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
+    }
 	
 	void Update () {
+        if (hasLevelEnded) {
+            return;
+        }
         
         float horizontal = Input.GetAxis(Constants.CROSSHAIR_HORIZONTAL_INPUT) * speed;
 		float vertical = Input.GetAxis(Constants.CROSSHAIR_VERTICAL_INPUT) * speed;
@@ -27,15 +33,21 @@ public class CrosshairController : MonoBehaviour {
 
 	void CheckIfLaserHitsAnything() {
 		if (Input.GetButtonDown(Constants.CROSSHAIR_LASER_INPUT)) {
-			RaycastHit hit;
-			if (Physics.Raycast(transform.position, new Vector3(0, 0, 1), out hit) && hit.transform != null) {
-				GameObject other = hit.transform.gameObject;
-				if (other.tag == Constants.NPC_TAG) {
-					other.GetComponent<NPCTrigger>().Kill();
-				} else if (other.tag == Constants.PLAYER_TAG) {
-					other.GetComponent<PlayerController>().Kill();
-				}
-			}
+            
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
+            foreach (RaycastHit hit in hits) {
+                if (hit.transform == null) {
+                    continue;
+                }
+
+                GameObject other = hit.transform.gameObject;
+                if (other.tag == Constants.NPC_TAG) {
+                    other.GetComponent<NPCTrigger>().Kill();
+                }
+                else if (other.tag == Constants.PLAYER_TAG) {
+                    other.GetComponentInParent<PlayerController>().Kill();
+                }
+            }
 		}
 	}
 
@@ -56,6 +68,14 @@ public class CrosshairController : MonoBehaviour {
             newPos.y = cam.ScreenToWorldPoint(new Vector3(screenPos.x, Screen.height, screenPos.z)).y;
         }
 
+        newPos += cam.transform.position - oldCamPos;
+        oldCamPos = cam.transform.position;
+
         transform.position = newPos;
     }
- }
+
+    private void HandleEndLevel(Hashtable h)
+    {
+        hasLevelEnded = true;
+    }
+}
