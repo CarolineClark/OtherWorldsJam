@@ -32,8 +32,13 @@ public class GameManager: MonoBehaviour {
     }
 
     void Start() {
+        EventManager.StartListening(Constants.EVENT_PLAYER_HIT, PlayerHit);
         EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
         EventManager.StartListening(Constants.EVENT_NPC_DIE, NPCDied);
+    }
+
+    void PlayerHit(Hashtable h) {
+        Debug.Log("player hit");
     }
 
     void PlayerDied(Hashtable h) {

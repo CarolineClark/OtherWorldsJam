@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 1;
     public float rotationSpeed = 1;
+    public float hits = 0;
+    public float invinciblityTime = 2f;
+    private float invincibleTimeLeft = 0f;
+    public float lives = 2;
 
 	CharacterController characterController;
 	Animator animator;
@@ -34,9 +38,31 @@ public class PlayerController : MonoBehaviour {
         Vector3 eulerAngles = transform.rotation.eulerAngles;
         eulerAngles = new Vector3(0, 0, eulerAngles.z);
         transform.rotation = Quaternion.Euler(eulerAngles);
+
+        if (invincibleTimeLeft > 0) {
+            CountDownInvincibility();
+        }
 	}
 
 	public void Kill() {
-		EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
+        if (invincibleTimeLeft > 0) {
+            return;
+        }
+
+        hits ++;
+        invincibleTimeLeft = invinciblityTime;
+        EventManager.TriggerEvent(Constants.EVENT_PLAYER_HIT);
+
+        if (hits >= lives) {
+            EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
+        }
 	}
+
+    public void CountDownInvincibility()
+    {
+        invincibleTimeLeft -= Time.deltaTime;
+        if (invincibleTimeLeft < 0) {
+            invincibleTimeLeft = 0;
+        }
+    }
 }
