@@ -38,14 +38,11 @@ public class ParticleLauncher : MonoBehaviour {
         splatterParticles.Emit (1);
     }
         
-    void Update () 
+    public void Fire()
     {
-        if (Input.GetButton (Constants.CROSSHAIR_LASER_INPUT)) 
-        {
-            ParticleSystem.MainModule psMain = particleLauncher.main;
-            psMain.startColor = particleColorGradient.Evaluate (Random.Range (0f, 1f));
-            particleLauncher.Emit (1);
-        }
+        ParticleSystem.MainModule psMain = particleLauncher.main;
+        psMain.startColor = particleColorGradient.Evaluate (Random.Range (0f, 1f));
+        particleLauncher.Emit (1);
 
     }
 }
