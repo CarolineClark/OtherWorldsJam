@@ -33,8 +33,8 @@ public class CrosshairController : MonoBehaviour {
 
 	void CheckIfLaserHitsAnything() {
 		if (Input.GetButtonDown(Constants.CROSSHAIR_LASER_INPUT)) {
-
-            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(0, 0, 1));
+            
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
             foreach (RaycastHit hit in hits) {
                 if (hit.transform == null) {
                     continue;
