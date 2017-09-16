@@ -6,7 +6,6 @@ public class NPCTrigger : MonoBehaviour {
 
 	Transform player = null;
 	CharacterController characterController;
-    ParticleSystem particleSystem;
 	public float speed;
     public float rotationSpeed = 1f;
     public float closeDistance = 0.1f;
@@ -19,7 +18,6 @@ public class NPCTrigger : MonoBehaviour {
 	void Start () {
         startPos = transform.position;
 		characterController = GetComponent<CharacterController>();
-        particleSystem = GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
         EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
