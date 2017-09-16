@@ -27,15 +27,21 @@ public class CrosshairController : MonoBehaviour {
 
 	void CheckIfLaserHitsAnything() {
 		if (Input.GetButtonDown(Constants.CROSSHAIR_LASER_INPUT)) {
-			RaycastHit hit;
-			if (Physics.Raycast(transform.position, new Vector3(0, 0, 1), out hit) && hit.transform != null) {
-				GameObject other = hit.transform.gameObject;
-				if (other.tag == Constants.NPC_TAG) {
-					other.GetComponent<NPCTrigger>().Kill();
-				} else if (other.tag == Constants.PLAYER_TAG) {
-					other.GetComponent<PlayerController>().Kill();
-				}
-			}
+
+            RaycastHit[] hits = Physics.RaycastAll(transform.position, new Vector3(0, 0, 1));
+            foreach (RaycastHit hit in hits) {
+                if (hit.transform == null) {
+                    continue;
+                }
+
+                GameObject other = hit.transform.gameObject;
+                if (other.tag == Constants.NPC_TAG) {
+                    other.GetComponent<NPCTrigger>().Kill();
+                }
+                else if (other.tag == Constants.PLAYER_TAG) {
+                    other.GetComponent<PlayerController>().Kill();
+                }
+            }
 		}
 	}
 

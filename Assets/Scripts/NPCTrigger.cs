@@ -6,14 +6,17 @@ public class NPCTrigger : MonoBehaviour {
 
 	Transform player = null;
 	CharacterController characterController;
+    ParticleSystem particleSystem;
 	public float speed;
     public float rotationSpeed = 1f;
     public float closeDistance = 0.1f;
+    public GameObject NPCDeath;
     private Vector3 startPos;
 
 	void Start () {
         startPos = transform.position;
 		characterController = GetComponent<CharacterController>();
+        particleSystem = GetComponent<ParticleSystem>();
         EventManager.StartListening(Constants.EVENT_PLAYER_DIE, PlayerDied);
 	}
 	
@@ -49,7 +52,8 @@ public class NPCTrigger : MonoBehaviour {
 
 	public void Kill() {
 		EventManager.TriggerEvent(Constants.EVENT_NPC_DIE);
-		Destroy(gameObject);
+        Instantiate(NPCDeath).transform.position = transform.position;
+		DestroyImmediate(gameObject);
 	}
 
     public void PlayerDied(Hashtable hash)
