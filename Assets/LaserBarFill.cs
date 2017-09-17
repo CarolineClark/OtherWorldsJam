@@ -9,8 +9,8 @@ public class LaserBarFill : MonoBehaviour {
 	void Start () {
 		image = GetComponent<Image>();
 		image.type = Image.Type.Filled;
-		image.fillMethod = Image.FillMethod.Vertical;
-		image.fillOrigin = (int)Image.OriginVertical.Bottom;
+		image.fillMethod = Image.FillMethod.Horizontal;
+		image.fillOrigin = (int)Image.OriginHorizontal.Left;
 		image.fillAmount = 1;
 	}
 	
