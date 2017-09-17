@@ -94,6 +94,10 @@ public class CrosshairController : MonoBehaviour {
             else if (other.tag == Constants.PLAYER_TAG) {
                 other.GetComponentInParent<PlayerController>().Kill(true);
             }
+
+			if (other.GetComponent<BurntBuilding> () != null) {
+				other.GetComponent<BurntBuilding> ().Burn ();
+			}
         }
 	}
 
