@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NPC
-  - Fire
-  - PlayerToNPC
   - laser_bar_ui
+  - PlayerToNPC
+  - NPC
+  - Burnable
   layers:
   - Default
   - TransparentFX
@@ -17,10 +17,10 @@ TagManager:
   - UI
   - 
   - 
-  - NPC
-  - Player
-  - 
-  - 
+  - PlayerToNPC
+  - LaserPointer
+  - reflective
+  - Burnable
   - 
   - 
   - 
@@ -45,6 +45,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Particle
-    uniqueID: 1531952661
+  - name: Crosshair
+    uniqueID: 2730746521
     locked: 0

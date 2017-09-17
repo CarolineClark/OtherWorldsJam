@@ -5,15 +5,16 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	GameObject player;
-	Vector3 offset = new Vector3(0, 0, -10);
+	public Vector3 offset = new Vector3(0, 0, -10);
 	float shake;
 	public float decreaseFactor = 2f;
 	public float magnitude = 0.5f;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag(Constants.PLAYER_TAG);
-		EventManager.StartListening(Constants.EVENT_NPC_DIE, ScreenShakeListener);
-	}
+        EventManager.StartListening(Constants.EVENT_NPC_DIE, ScreenShakeListener);
+        EventManager.StartListening(Constants.EVENT_PLAYER_HIT, ScreenShakeListener);
+    }
 	
 	void Update () {
 		transform.position = player.transform.position + offset;

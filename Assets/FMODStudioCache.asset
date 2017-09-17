@@ -23,10 +23,27 @@ MonoBehaviour:
   - {fileID: 114258900817267892}
   - {fileID: 114365714282636554}
   - {fileID: 114192898771699610}
+  - {fileID: 114295005012965296}
+  - {fileID: 114891728873338088}
   MasterBankRef: {fileID: 114233964946570190}
   StringsBankRef: {fileID: 114780772042696844}
-  stringsBankWriteTime: 636412550920000000
+  stringsBankWriteTime: 636412579840000000
   cacheVersion: 2
+--- !u!114 &114006487631932400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progresstion
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114014959648547824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +101,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: buttonHold
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114042951948024134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: moving
   Min: 0
   Max: 1
   Default: 0
@@ -192,6 +224,36 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114095919878193668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonHold
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114107576552184410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114109061683941978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +268,21 @@ MonoBehaviour:
   Name: velocity
   Min: 0
   Max: 3
+  Default: 0
+--- !u!114 &114111746468893426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: moving
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114113443495077520
 MonoBehaviour:
@@ -402,6 +479,21 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114174377837337964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonDown
+  Min: 0
+  Max: 1
+  Default: 1
 --- !u!114 &114180978909485888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,8 +543,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114597121173487708}
-  - {fileID: 114395056552377944}
+  - {fileID: 114006487631932400}
+  - {fileID: 114220468557630476}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114199684833060598
@@ -530,6 +622,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114220468557630476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: threat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114222462565947248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,11 +694,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/stefan/Desktop/Game Jam/GameJam/Build/Desktop/Master Bank.bank
-  lastModified: 636412550920000000
+  lastModified: 636412579840000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 4861856
+    Value: 4933760
   Exists: 1
 --- !u!114 &114237863733551316
 MonoBehaviour:
@@ -638,6 +745,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114244303403348224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: lasorLeft
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114258900817267892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +779,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114094545289075720}
+  - {fileID: 114107576552184410}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114269003036125750
@@ -735,6 +857,27 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+--- !u!114 &114295005012965296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/HumanPlayer/death
+  guid: 88ef9c2721e81f49a6b910900f03d3fe
+  Banks:
+  - {fileID: 114233964946570190}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
 --- !u!114 &114296021295670640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,6 +968,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114331498200794916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonDown
+  Min: 0
+  Max: 1
+  Default: 1
 --- !u!114 &114333515695021988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,6 +1274,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114464367509384930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonHold
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114465781140668318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1311,6 +1484,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114583030599869466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: threat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114590087099631462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1446,6 +1634,21 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114649390162416314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progresstion
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114649807403139442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1467,6 +1670,21 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114656886148574340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: lasorLeft
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114666733660071548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1800,11 +2018,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: /Users/stefan/Desktop/Game Jam/GameJam/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636412550920000000
+  lastModified: 636412579840000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1046
+    Value: 1140
   Exists: 1
 --- !u!114 &114780783756350480
 MonoBehaviour:
@@ -2082,6 +2300,28 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114891728873338088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/enemyTalk
+  guid: a4ccd12be6482b46937879fe0ac36196
+  Banks:
+  - {fileID: 114233964946570190}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114111746468893426}
+  MinDistance: 1
+  MaxDistance: 20
 --- !u!114 &114894004826099882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,7 +2356,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114184072461424178}
+  - {fileID: 114331498200794916}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114904516455961086
@@ -2179,6 +2419,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+--- !u!114 &114927092695870270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114927536510567072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2228,8 +2483,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114308034543190932}
-  - {fileID: 114146814056088810}
+  - {fileID: 114244303403348224}
+  - {fileID: 114095919878193668}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114971997456321516

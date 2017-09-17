@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour {
     public float rotationSpeed = 1;
     public float hits = 0;
     public float lives = 2;
-    public GameObject HeatRayDeath;
-    public GameObject NormalDeath;
     public float invinciblityTime = 2f;
     private float invincibleTimeLeft = 0f;
     private bool hasLevelEnded = false;
@@ -96,11 +94,13 @@ public class PlayerController : MonoBehaviour {
             EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
 			FMODUnity.RuntimeManager.PlayOneShot (playerDieRef);
             if (isHeatRayDeath) {
-                Instantiate(HeatRayDeath).transform.position = transform.position;
+                DeathManager.GetHeatRayDeath().GetComponent<HeatRayDeath>().Init(transform.position);
             }
             else {
-                Instantiate(NormalDeath).transform.position = transform.position;
+                DeathManager.GetNormalDeath().GetComponent<NormalDeath>().Init(transform.position);
             }
+
+            EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
         }
 	}
 
@@ -115,5 +115,12 @@ public class PlayerController : MonoBehaviour {
     private void HandleEndLevel(Hashtable h)
     {
         hasLevelEnded = true;
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("oncollisionenter");
+        if (collision.gameObject.tag == Constants.NPC_TAG) {
+            Kill(false);
+        }
     }
 }
