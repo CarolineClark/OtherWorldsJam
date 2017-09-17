@@ -175,10 +175,6 @@ MonoBehaviour:
   rotationSpeed: 1
   hits: 0
   lives: 2
-  HeatRayDeath: {fileID: 1741645137876174, guid: 999a5c358c9933543bf1bc37eccb5bc1,
-    type: 2}
-  NormalDeath: {fileID: 1579584175688370, guid: d739b799ea65b264d817cf04fc1e1b3d,
-    type: 2}
   invinciblityTime: 2
 --- !u!143 &143655929077635232
 CharacterController:

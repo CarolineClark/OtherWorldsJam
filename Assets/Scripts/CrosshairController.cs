@@ -53,8 +53,6 @@ public class CrosshairController : MonoBehaviour {
 
     void LaserLogic()
     {
-        Debug.Log("test");
-
         if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
             laserLeft -= laserReductionSpeed * Time.deltaTime;
             if (laserLeft > 0) {
