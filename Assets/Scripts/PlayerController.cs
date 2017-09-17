@@ -90,4 +90,11 @@ public class PlayerController : MonoBehaviour {
     {
         hasLevelEnded = true;
     }
+
+    private void OnCollisionEnter(Collision collision) {
+        Debug.Log("oncollisionenter");
+        if (collision.gameObject.tag == Constants.NPC_TAG) {
+            Kill(false);
+        }
+    }
 }
