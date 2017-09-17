@@ -57,7 +57,7 @@ public class Burn : MonoBehaviour {
 
     IEnumerator Kill()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         changeToWhite = false;
         changeToOrange = true;
         yield return new WaitForSeconds(0.15f);
