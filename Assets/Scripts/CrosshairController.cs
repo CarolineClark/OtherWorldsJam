@@ -21,7 +21,6 @@ public class CrosshairController : MonoBehaviour {
     private float minLaser = 0;
     private float laserLeft;
     LaserBarFill laserBarUi;
-    ParticleLauncher laser;
 
     void Start () {
         laserLeft = maxLaser;
@@ -56,7 +55,6 @@ public class CrosshairController : MonoBehaviour {
         if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
             laserLeft -= laserReductionSpeed * Time.deltaTime;
             if (laserLeft > 0) {
-                laser.Fire();
                 CheckIfLaserHitAnything();
             }
 

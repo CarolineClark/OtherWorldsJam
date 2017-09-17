@@ -67,14 +67,14 @@ public class PlayerController : MonoBehaviour {
         EventManager.TriggerEvent(Constants.EVENT_PLAYER_HIT);
 
         if (hits >= lives) {
-            EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
-
             if (isHeatRayDeath) {
                 DeathManager.GetHeatRayDeath().GetComponent<HeatRayDeath>().Init(transform.position);
             }
             else {
                 DeathManager.GetNormalDeath().GetComponent<NormalDeath>().Init(transform.position);
             }
+
+            EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
         }
 	}
 
