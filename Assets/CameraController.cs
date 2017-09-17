@@ -12,8 +12,9 @@ public class CameraController : MonoBehaviour {
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag(Constants.PLAYER_TAG);
-		EventManager.StartListening(Constants.EVENT_NPC_DIE, ScreenShakeListener);
-	}
+        EventManager.StartListening(Constants.EVENT_NPC_DIE, ScreenShakeListener);
+        EventManager.StartListening(Constants.EVENT_PLAYER_HIT, ScreenShakeListener);
+    }
 	
 	void Update () {
 		transform.position = player.transform.position + offset;

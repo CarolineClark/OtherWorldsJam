@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - laser_bar_ui
+  - PlayerToNPC
+  - NPC
+  - Burnable
   layers:
   - Default
   - TransparentFX
