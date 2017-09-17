@@ -159,6 +159,7 @@ public class CrosshairController : MonoBehaviour {
         float howOften = 0.04f;
         Vector3 dir = Vector3.Normalize(newPos - oldPos) * howOften;
         int count = Mathf.CeilToInt(Vector3.Distance(oldPos, newPos) / howOften);
+        count = count == 0 ? 1 : count;
 
         for (int i = 0; i < count; i++) {
             GameObject burn = GetNextBurn();
