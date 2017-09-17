@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33926261925362762}
   - component: {fileID: 23988656618942814}
   - component: {fileID: 64214639237689820}
+  - component: {fileID: 114513179106124840}
   m_Layer: 0
   m_Name: accademy
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1991271732187334}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: -0, w: 0}
-  m_LocalPosition: {x: 14.6, y: 15.1, z: -3.1}
+  m_LocalPosition: {x: -15.8, y: 35.3, z: -3.4698865}
   m_LocalScale: {x: 400, y: 400, z: 400}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,3 +97,15 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 39710f33e64a148259afa53bf72ca4e7, type: 3}
+--- !u!114 &114513179106124840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1991271732187334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9f36dda77c34222982b89097a42a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurntHouse: {fileID: 100000, guid: a281406c399c34a4dad214d7629e4cc5, type: 3}
