@@ -197,6 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd717bc36a1c449eebf02802f2c827e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  humanPlayerFootsteps: event:/HumanPlayer/humanFootsteps
+  playerDieRef: event:/HumanPlayer/death
   speed: 0.2
   rotationSpeed: 1
   hits: 0

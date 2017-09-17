@@ -86,6 +86,7 @@ MonoBehaviour:
   speed: 0.15
   burn: {fileID: 1701592362765444, guid: b12fce0d9507a4c40907dee3a78f4ecf, type: 2}
   maxBurns: 1000
+  lasorFire: event:/AlienPlayer/fire
 --- !u!120 &120134354303594738
 LineRenderer:
   m_ObjectHideFlags: 1

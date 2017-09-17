@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 114845252815710536}
   m_Layer: 5
   m_Name: Power Bar Background
-  m_TagString: laser_bar_ui
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d029f56718241028d9fbd89a3f90b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atmos: 
+  musicRef: 
 --- !u!114 &114092664354926544
 MonoBehaviour:
   m_ObjectHideFlags: 1
