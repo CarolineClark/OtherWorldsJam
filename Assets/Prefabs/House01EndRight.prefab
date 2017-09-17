@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4805730574292130}
   - component: {fileID: 64686495850822292}
   - component: {fileID: 65526709629714380}
+  - component: {fileID: 114225638018707254}
   m_Layer: 0
   m_Name: House01EndRight
   m_TagString: Untagged
@@ -137,3 +138,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.750637, y: 1, z: 6.526087}
   m_Center: {x: -0.7219753, y: 0, z: -0.44097233}
+--- !u!114 &114225638018707254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1815684910830966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9f36dda77c34222982b89097a42a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurntMesh: {fileID: 4300000, guid: a281406c399c34a4dad214d7629e4cc5, type: 3}

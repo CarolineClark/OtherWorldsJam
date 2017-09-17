@@ -78,11 +78,13 @@ public class CrosshairController : MonoBehaviour {
         RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.Normalize(cam.transform.position - transform.position) * -10);
         bool hasBurned = false;
         foreach (RaycastHit hit in hits) {
+
             if (hit.transform == null) {
                 continue;
             }
 
             GameObject other = hit.transform.gameObject;
+
             if (other.tag == Constants.BURNABLE_TAG && !hasBurned) {
                 if (breakInBurn) {
                     lastPoint = hit.point;
