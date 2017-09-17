@@ -84,8 +84,7 @@ public class CrosshairController : MonoBehaviour {
             }
 
             GameObject other = hit.transform.gameObject;
-
-            if (other.tag == Constants.BURNABLE_TAG && !hasBurned) {
+            if (other.tag == "Untagged" && !hasBurned) {
                 if (breakInBurn) {
                     lastPoint = hit.point;
                     breakInBurn = false;
