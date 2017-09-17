@@ -4,9 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NPC
-  - Fire
-  - PlayerToNPC
   - laser_bar_ui
   layers:
   - Default
@@ -15,10 +12,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
   - NPC
-  - Player
+  - Fire
+  - PlayerToNPC
+  - LaserPointer
+  - reflective
+  - Burnable
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,7 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Particle
-    uniqueID: 1531952661
     locked: 0

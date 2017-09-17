@@ -3,6 +3,8 @@ public class Constants
     public static string PLAYER_TAG = "Player";
     public static string PLAYER_TO_NPC_TAG = "PlayerToNPC";
     public static string NPC_TAG = "NPC";
+    public static string BURNABLE_TAG = "Burnable";
+
     public static string CROSSHAIR_HORIZONTAL_INPUT = "HorizontalCrosshair";
     public static string CROSSHAIR_VERTICAL_INPUT = "VerticalCrosshair";
     public static string CROSSHAIR_LASER_INPUT = "CrosshairButtonX";
