@@ -202,7 +202,7 @@ MonoBehaviour:
   speed: 0.2
   rotationSpeed: 1
   hits: 0
-  lives: 2
+  lives: 1
   invinciblityTime: 2
 --- !u!143 &143655929077635232
 CharacterController:
