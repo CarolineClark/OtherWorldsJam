@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: /Users/stefan/Desktop/Game Jam/GameJam/GameJam.fspro
-  SourceProjectPathUnformatted: /Users/stefan/Desktop/Game Jam/GameJam/GameJam.fspro
-  SourceBankPathUnformatted: /Users/stefan/Desktop/Game Jam/GameJam/Build
+  sourceProjectPath: FMOD-stuff/GameJam.fspro
+  SourceProjectPathUnformatted: FMOD-stuff/GameJam.fspro
+  SourceBankPathUnformatted: FMOD-stuff/Build
   AutomaticEventLoading: 1
   AutomaticSampleLoading: 0
   ImportType: 0
@@ -54,6 +54,7 @@ MonoBehaviour:
     Value: 256
   - Platform: 2
     Value: 32
-  Plugins: []
+  Plugins:
+  - 
   MasterBank: Master Bank
   Banks: []
