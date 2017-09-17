@@ -72,6 +72,7 @@ public class CrosshairController : MonoBehaviour {
     void LaserLogic()
     {
         if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
+            Debug.Log("crosshair button pushed");
             laserLeft -= laserReductionSpeed * Time.deltaTime;
             if (laserLeft > 0) {
 				if (lasorOn == false) {
@@ -91,7 +92,9 @@ public class CrosshairController : MonoBehaviour {
 			alienLasor.setParameterValue ("buttonDown", 0);
 			laserLeft += laserChargingSpeed * Time.deltaTime;
 			lasorOn = false;
-            laserLeft += laserChargingSpeed * Time.deltaTime;
+            if (laserLeft < 1) {
+                laserLeft += laserChargingSpeed * Time.deltaTime;
+            }
             breakInBurn = true;
             lineRenderer.enabled = false;
         }
