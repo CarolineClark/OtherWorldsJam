@@ -15,6 +15,7 @@ public class CrosshairController : MonoBehaviour {
     private Vector3 lastPoint;
     private Camera cam;
     private Vector3 oldCamPos;
+    private LineRenderer lineRenderer;
 	CharacterController characterController;
     private bool hasLevelEnded = false;
     private float maxLaser = 1;
@@ -23,6 +24,7 @@ public class CrosshairController : MonoBehaviour {
     LaserBarFill laserBarUi;
 
     void Start () {
+        lineRenderer = GetComponent<LineRenderer>();
         laserLeft = maxLaser;
 		characterController = GetComponent<CharacterController>();
         cam = FindObjectOfType<Camera>();
@@ -40,6 +42,8 @@ public class CrosshairController : MonoBehaviour {
         float horizontal = Input.GetAxis(Constants.CROSSHAIR_HORIZONTAL_INPUT) * speed;
 		float vertical = Input.GetAxis(Constants.CROSSHAIR_VERTICAL_INPUT) * speed;
 		characterController.Move(new Vector3(horizontal, vertical, 0));
+        
+        lineRenderer.SetPosition(1, cam.ScreenToWorldPoint(new Vector3(0, 0, 5)) - transform.position);
 
         KeepCrosshairOnScreen();
         
@@ -55,13 +59,17 @@ public class CrosshairController : MonoBehaviour {
         if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
             laserLeft -= laserReductionSpeed * Time.deltaTime;
             if (laserLeft > 0) {
+                lineRenderer.enabled = true;
                 CheckIfLaserHitAnything();
             }
-
+            else {
+                lineRenderer.enabled = false;
+            }
         }
         else {
             laserLeft += laserChargingSpeed * Time.deltaTime;
             breakInBurn = true;
+            lineRenderer.enabled = false;
         }
         laserBarUi.ShowPercentageOfElement(laserLeft);
 	}
