@@ -22,7 +22,7 @@ public class Burn : MonoBehaviour {
 
         StartCoroutine(Kill());
 
-        if (Random.Range(0, 10) > 8) {
+        if (Random.Range(0, 10) > 8.9) {
             ourLight.enabled = true;
         }
 
