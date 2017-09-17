@@ -15,11 +15,13 @@ public class CrosshairController : MonoBehaviour {
     private float minLaser = 0;
     private float laserLeft;
     LaserBarFill laserBarUi;
-    ParticleLauncher laser;
 
 	[FMODUnity.EventRef]
 	public string lasorFire = null;
 	private FMOD.Studio.EventInstance alienLasor;
+
+	bool lasorOn = false;
+	bool laserOff = false;
 
 
     void Start () {
@@ -28,10 +30,12 @@ public class CrosshairController : MonoBehaviour {
         cam = FindObjectOfType<Camera>();
         oldCamPos = cam.transform.position;
         laserBarUi = GameObject.FindGameObjectWithTag(Constants.UI_LASER_BAR).GetComponent<LaserBarFill>();
-        laser = GetComponentInChildren<ParticleLauncher>();
+        //laser = GetComponentInChildren<ParticleLauncher>();
         EventManager.StartListening(Constants.EVENT_END_LEVEL, HandleEndLevel);
 
 		alienLasor = FMODUnity.RuntimeManager.CreateInstance (lasorFire);
+		alienLasor.setParameterValue ("buttonDown", 1);
+
     }
 	
 	void Update () {
@@ -45,29 +49,51 @@ public class CrosshairController : MonoBehaviour {
 
         KeepCrosshairOnScreen();
         
-        if (laserLeft <= 0) {
-            laserLeft = 0;
-        }
+		if (laserLeft <= 0) {
+			laserLeft = 0;
+			//alienLasor.setParameterValue ("buttonHold", 1);
+		} 
+		else if (laserLeft == 1) 
+		{
+			lasorOn = false;
+		}
 
         LaserLogic();
     }
 
 	void LaserLogic() {
-		if (Input.GetButton(Constants.CROSSHAIR_LASER_INPUT)) {
-            laserLeft -= laserReductionSpeed * Time.deltaTime;
-			if (laserLeft > 0) {
-				laser.Fire ();
-				alienLasor.setParameterValue ("buttonHold", 1);
-				CheckIfLaserHitAnything ();
-			} else {
-				//
-				alienLasor.setParameterValue ("buttonHold", 0);
-			}
 
-		} else {
+		if (Input.GetButton (Constants.CROSSHAIR_LASER_INPUT)) 
+		{
+			laserLeft -= laserReductionSpeed * Time.deltaTime;
+
+			if (laserLeft > 0) {
+
+				if (lasorOn == false) {
+					Debug.Log ("ON");
+					lasorOn = true;
+					alienLasor.setParameterValue ("buttonDown", 1);
+					alienLasor.start ();
+				}
+				CheckIfLaserHitAnything ();
+				//alienLasor.setParameterValue ("buttonDown", 1);
+
+			} 
+			else 
+			{
+				alienLasor.setParameterValue ("buttonDown", 0);
+				Debug.Log ("OFF");
+			}
+		}
+		else 
+		{
+			alienLasor.setParameterValue ("buttonDown", 0);
             laserLeft += laserChargingSpeed * Time.deltaTime;
+			Debug.Log ("Off");
+			lasorOn = false;
         }
-        laserBarUi.ShowPercentageOfElement(laserLeft);
+        
+		laserBarUi.ShowPercentageOfElement(laserLeft);
 	}
 
 	//---------------------------------Audio---------------------------------//

@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour {
 	public string humanPlayerFootsteps = null;
 	FMOD.Studio.EventInstance playerFootsteps;
 
+	[FMODUnity.EventRef]
+	public string playerDieRef = null;
+	FMOD.Studio.EventInstance playerDie;
 
 	public float speed = 1;
     public float rotationSpeed = 1;
@@ -91,6 +94,7 @@ public class PlayerController : MonoBehaviour {
 
         if (hits >= lives) {
             EventManager.TriggerEvent(Constants.EVENT_PLAYER_DIE);
+			FMODUnity.RuntimeManager.PlayOneShot (playerDieRef);
             if (isHeatRayDeath) {
                 Instantiate(HeatRayDeath).transform.position = transform.position;
             }
