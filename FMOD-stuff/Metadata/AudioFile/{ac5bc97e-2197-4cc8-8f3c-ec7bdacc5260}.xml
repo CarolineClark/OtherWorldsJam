@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.09.00">
+    <object class="AudioFile" id="{ac5bc97e-2197-4cc8-8f3c-ec7bdacc5260}">
+        <property name="assetPath">
+            <value>170917_ZOOM0011_LR.11.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.89743764172335605</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{0b439eab-9819-47e3-bbae-70850941e8c9}</destination>
+        </relationship>
+    </object>
+</objects>

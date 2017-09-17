@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.09.00">
+    <object class="AudioFile" id="{ccd68f56-87bd-4038-8504-09c29c3cfd86}">
+        <property name="assetPath">
+            <value>170916_Fireworks-Amb-Blasts-Singles-Far.09.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.83705215419501133</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{0b439eab-9819-47e3-bbae-70850941e8c9}</destination>
+        </relationship>
+    </object>
+</objects>

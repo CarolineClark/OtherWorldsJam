@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.09.00">
+    <object class="AudioFile" id="{7d10dea1-5528-4bf9-9c23-23de9145f224}">
+        <property name="assetPath">
+            <value>enemyStep3.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.1331065759637189</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{0b439eab-9819-47e3-bbae-70850941e8c9}</destination>
+        </relationship>
+    </object>
+</objects>

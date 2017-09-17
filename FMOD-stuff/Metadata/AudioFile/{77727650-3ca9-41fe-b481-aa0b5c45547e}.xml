@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.09.00">
+    <object class="AudioFile" id="{77727650-3ca9-41fe-b481-aa0b5c45547e}">
+        <property name="assetPath">
+            <value>HWY10_AMBIENCE_DISTANT HIGHWAY_Low traffic_Near interchange_2.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>96</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>132.73599999999999</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{0b439eab-9819-47e3-bbae-70850941e8c9}</destination>
+        </relationship>
+    </object>
+</objects>
