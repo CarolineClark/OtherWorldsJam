@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33140637497935994}
   - component: {fileID: 23864432136127538}
   m_Layer: 0
-  m_Name: car3
+  m_Name: Burnt Car Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

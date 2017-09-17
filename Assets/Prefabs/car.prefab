@@ -72,6 +72,8 @@ GameObject:
   - component: {fileID: 4939318068458212}
   - component: {fileID: 33098263813055422}
   - component: {fileID: 23111682816950110}
+  - component: {fileID: 64202635696246120}
+  - component: {fileID: 114033928453879370}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -389,3 +391,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1408504838087364}
   m_Mesh: {fileID: 4300004, guid: 170a9fb5d93c3419e8ee986bc0d48d45, type: 3}
+--- !u!64 &64202635696246120
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608687897709720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: 45b5c12b0a08f4f34aa7d4b7bf4a8398, type: 3}
+--- !u!114 &114033928453879370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1608687897709720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9f36dda77c34222982b89097a42a04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BurntHouse: {fileID: 1405580644436712, guid: da83d6c0f8fb44685b0b99b6fb20b84f, type: 2}
