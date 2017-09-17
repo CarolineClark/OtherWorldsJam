@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114355121174805522}
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   EditorEvents:
   - {fileID: 114621172407232668}
   - {fileID: 114482705404744642}
@@ -25,9 +25,9 @@ MonoBehaviour:
   - {fileID: 114237991528475914}
   - {fileID: 114310247767984468}
   - {fileID: 114803641533545032}
-  MasterBankRef: {fileID: 114360099240087008}
+  MasterBankRef: {fileID: 114681532834051884}
   StringsBankRef: {fileID: 114355121174805522}
-  stringsBankWriteTime: 636412628570000000
+  stringsBankWriteTime: 636412637005047109
   cacheVersion: 2
 --- !u!114 &114006487631932400
 MonoBehaviour:
@@ -508,12 +508,12 @@ MonoBehaviour:
   Path: event:/AlienPlayer/fire
   guid: 48b44d9f52470e4986977311c17ddc34
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114727821715273624}
+  - {fileID: 114378964292222940}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114166614137140252
@@ -704,6 +704,21 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 1
+--- !u!114 &114223026570296112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: velocity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114227149816654568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,7 +796,7 @@ MonoBehaviour:
   Path: event:/AlienPlayer/alienWeapon
   guid: c47f1a7c6aef984282265a7dd7f51bc0
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -870,6 +885,21 @@ MonoBehaviour:
   - {fileID: 114247700869929606}
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114262731030869710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: progresstion
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114269003036125750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,12 +1040,12 @@ MonoBehaviour:
   Path: event:/HumanPlayer/humanFootsteps
   guid: c5f1e91af2abd341a38f1730e86fbfae
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114364483199990388}
+  - {fileID: 114223026570296112}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114320025429125292
@@ -1194,8 +1224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Path: FMOD-stuff/Build/Desktop/Master Bank.strings.bank
-  lastModified: 636412628570000000
+  Path: FMOD-stuff\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636412637005047109
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1233,7 +1263,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 4933760
-  Exists: 1
+  Exists: 0
 --- !u!114 &114364483199990388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1314,6 +1344,36 @@ MonoBehaviour:
   Name: velocity
   Min: 0
   Max: 3
+  Default: 0
+--- !u!114 &114378964292222940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonDown
+  Min: 0
+  Max: 1
+  Default: 1
+--- !u!114 &114381422141347086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: moving
+  Min: 0
+  Max: 1
   Default: 0
 --- !u!114 &114395056552377944
 MonoBehaviour:
@@ -1404,14 +1464,29 @@ MonoBehaviour:
   Path: event:/Enemy/enemyTalk
   guid: a4ccd12be6482b46937879fe0ac36196
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114098542462818610}
+  - {fileID: 114381422141347086}
   MinDistance: 1
   MaxDistance: 20
+--- !u!114 &114417818750051628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: buttonHold
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114417851350458596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1501,7 +1576,7 @@ MonoBehaviour:
   Path: event:/Atmos/warZone
   guid: 50714720485aac4788d5c47a5a3d707f
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -1582,13 +1657,13 @@ MonoBehaviour:
   Path: event:/Music
   guid: 9bd1a936172bfe4c85bd0e11cdee5fba
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114994389535500012}
-  - {fileID: 114802964883046634}
+  - {fileID: 114262731030869710}
+  - {fileID: 114961691366826934}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114482705404744642
@@ -1605,7 +1680,7 @@ MonoBehaviour:
   Path: event:/AlienPlayer/alienFootsteps
   guid: 122b5384ba776f458bcc3ba573ab8936
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1748,6 +1823,21 @@ MonoBehaviour:
   Max: 1
   Default: 0
 --- !u!114 &114561376753561214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: lasorLeft
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114564942197110360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1911,13 +2001,13 @@ MonoBehaviour:
   Path: event:/AlienPlayer/alienSuperWeapon
   guid: 070202be1c30614eb128bca2d8473560
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 114708393973112838}
-  - {fileID: 114320046319194418}
+  - {fileID: 114564942197110360}
+  - {fileID: 114417818750051628}
   MinDistance: 0
   MaxDistance: 0
 --- !u!114 &114646249472170176
@@ -2076,6 +2166,24 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+--- !u!114 &114681532834051884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Unity\OtherWorldsJam\FMOD-stuff\Build\Desktop\Master Bank.bank
+  lastModified: 636412637005032128
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 4933760
+  Exists: 1
 --- !u!114 &114681712594706584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2489,7 +2597,7 @@ MonoBehaviour:
   Path: event:/Enemy/enemyDie
   guid: ea4c43b0855f404495576322bd4c64df
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2540,7 +2648,7 @@ MonoBehaviour:
   Path: event:/HumanPlayer/death
   guid: 88ef9c2721e81f49a6b910900f03d3fe
   Banks:
-  - {fileID: 114360099240087008}
+  - {fileID: 114681532834051884}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2935,6 +3043,21 @@ MonoBehaviour:
   - {fileID: 114730978865281944}
   MinDistance: 0
   MaxDistance: 0
+--- !u!114 &114961691366826934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: threat
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114971997456321516
 MonoBehaviour:
   m_ObjectHideFlags: 0

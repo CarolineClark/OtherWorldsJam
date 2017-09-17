@@ -1,25 +1,20 @@
 [LOG] System::create                           : Header version = 1.09.08. Current version = 1.09.08.
-[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0x0.
+[LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : FMOD Studio Version: 00010908 (90162)
-[LOG] SystemI::init                            : maxchannels = 256, flags = 00020000, extradriverdata = 0x0
+[LOG] SystemI::init                            : maxchannels = 256, flags = 00020000, extradriverdata = 0000000000000000
 [LOG] SystemI::setOutputInternal               : Setting output to type 0
-[LOG] SystemI::setOutputInternal               : Setting output to type 12
-[LOG] OutputCoreAudio::enumerate               : Enumerating...
-[LOG] OutputCoreAudio::enumerate               : Found output driver: "Built-in Output".
-[LOG] OutputCoreAudio::enumerate               : Done.
-[LOG] SystemI::setOutputInternal               : Setting output to type 12
-[LOG] SystemI::setOutputInternal               : Setting output to type 12
-[LOG] SystemI::setOutputInternal               : Setting output to type 12
-[LOG] OutputCoreAudio::init                    : Output running 2 channels at 44100Hz sample rate.
-[LOG] OutputCoreAudio::init                    : Maximum hardware read size: 1024 samples, Software buffer size: 512 samples, Number of software buffers: 4.
-[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] SystemI::setOutputInternal               : Setting output to type 8
+[LOG] SystemI::setOutputInternal               : Setting output to type 8
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] SystemI::init                            : Create master channel group and master sound group.
 [LOG] SystemI::init                            : Set up emulated output.  256 channels
 [LOG] SystemI::init                            : create the channel pool
 [LOG] SystemI::init                            : create the stream thread
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0x2e4b2e008 isAsync 0 updatePeriod 0.02
+[LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
+[LOG] AsyncManager::init                       : manager 0000000052711BE8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -27,13 +22,648 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000000059770E58 : node = 0000000024200330
+[LOG] SystemI::createSound                     : add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000059770E58
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000024200448
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 115744
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 115744, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000059770E58
+[LOG] SoundI::getSubSound                      : sound 0000000059770E58.  Subsound index 0 / 1
 [LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
 [LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000000059770288 : node = 00000000241FEA40
+[LOG] SystemI::createSound                     : add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000059770288
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000241FEB58
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 154816
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 154816, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000059770288
+[LOG] SoundI::getSubSound                      : sound 0000000059770288.  Subsound index 0 / 1
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000000059771008 : node = 00000000241FEB90
+[LOG] SystemI::createSound                     : add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000059771008
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000241FECA8
+[LOG] SystemI::createSound                     :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSound                     :     setdata soundi = 00000000597711B8 : node = 00000000241FF370
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] SystemI::createSound                     :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     :     setdata soundi = 0000000059770438 : node = 00000000241FF610
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000005246E4A8.  list count = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 235744
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 235744, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000059771008
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000597711B8
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000241FF488
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 87168
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 87168, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000597711B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000059770438
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000241FF728
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 174432
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 174432, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000059770438
+[LOG] SoundI::getSubSound                      : sound 0000000059771008.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 00000000597711B8.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 0000000059770438.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000000D8FE8E8 : node = 0000000059D24020
+[LOG] SystemI::createSound                     : add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000000D8FE8E8
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000059D24138
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 55
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 186528
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 186528, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000000D8FE8E8
+[LOG] SoundI::getSubSound                      : sound 000000000D8FE8E8.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000000D8FE228 : node = 000000005A128CB0
+[LOG] SystemI::createSound                     : add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] SystemI::createSound                     : filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000000D8FE228
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSound                     :     setdata soundi = 000000005A131BB8 : node = 000000005A1288C0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSound                     :     add node to async list : head = 000000005246E4A8.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005A128DC8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 223776
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 223776, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000000D8FE228
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005A131BB8
+[LOG] SystemI::createSoundInternal             :     filename = FMOD-stuff\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4860160
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 73600
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005A1289D8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Format has 1 subsounds.
+[LOG] SystemI::createSoundInternal             :     Create as FMOD_CREATESTREAM
+[LOG] System::createSoundInternal              :     decode buffersize = 19200 : blocksize = 256 : format = 2
+[LOG] SystemI::createSample                    :     mode 02010082 length 19200 samples, lengthbytes 232832
+[LOG] SystemI::createSample                    :     channels = 2
+[LOG] SystemI::createSample                    :     output = 0000000059EE27F8
+[LOG] OutputSoftware::createSample             :     lengthpcm 19200, lengthbytes 232832, channels 2, format 2, freq 48000, mode 0201008a
+[LOG] System::createSoundInternal              :     1 subsounds detected.
+[LOG] System::createSoundInternal              :     Seek stream to start
+[LOG] System::createSoundInternal              :     flush stream buffer
+[LOG] System::createSoundInternal              :     flush successful.
+[LOG] System::createSoundInternal              :     switch file handle from small blocking single buffered to large nonblocking doublebuffered.
+[LOG] SystemI::createSoundInternal             :     done.  OpenState now = FMOD_OPENSTATE_READY.
+
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005A131BB8
+[LOG] SoundI::getSubSound                      : sound 000000000D8FE228.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 000000005A131BB8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : bass (0000000059770CA8)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770CA8)
+[LOG] SoundI::release                          :     bass (00000000599F6B28)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770CA8)
+[LOG] SoundI::release                          :     bass (0000000059771368)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770CA8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : FuzzBass (00000000597705E8)
+[LOG] SoundI::release                          : remove stream samples. (00000000597705E8)
+[LOG] SoundI::release                          :     FuzzBass (00000000599F7348)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000597705E8)
+[LOG] SoundI::release                          :     FuzzBass (0000000059771A28)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000597705E8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Ryth Guitar (0000000059770AF8)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770AF8)
+[LOG] SoundI::release                          :     Ryth Guitar (00000000599F71A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770AF8)
+[LOG] SoundI::release                          :     Ryth Guitar (0000000059771518)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770AF8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Ethnic Purcusion  (0000000059770948)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770948)
+[LOG] SoundI::release                          :     Ethnic Purcusion  (00000000599F6988)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770948)
+[LOG] SoundI::release                          :     Ethnic Purcusion  (00000000597700D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770948)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Explosion blast large trail off military_BLASTWAVEFX_09699 (0000000059770E58)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770E58)
+[LOG] SoundI::release                          :     Explosion blast large trail off military_BLASTWAVEFX_09699 (00000000599F74E8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770E58)
+[LOG] SoundI::release                          :     Explosion blast large trail off military_BLASTWAVEFX_09699 (00000000597716C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770E58)
+[LOG] SoundI::release                          : done
 [LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
 [LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
-[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SoundI::release                          :  (00000000524847C8)
+[LOG] SoundI::release                          : release subsounds. (00000000524847C8)
+[LOG] SoundI::release                          :     Reverby Impact6 (000000005246E838)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524847C8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427998)
+[LOG] SoundI::release                          : release subsounds. (0000000052427998)
+[LOG] SoundI::release                          :     Reverby Impact1 (000000005995BF68)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427998)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653C68)
+[LOG] SoundI::release                          : release subsounds. (0000000052653C68)
+[LOG] SoundI::release                          :     Reverby Impact3 (000000005980FB58)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653C68)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052654228)
+[LOG] SoundI::release                          : release subsounds. (0000000052654228)
+[LOG] SoundI::release                          :     Reverby Impact4 (000000005980FCF8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052654228)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427268)
+[LOG] SoundI::release                          : release subsounds. (0000000052427268)
+[LOG] SoundI::release                          :     Reverby Impact5 (000000005246CFD8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427268)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524283A8)
+[LOG] SoundI::release                          : release subsounds. (00000000524283A8)
+[LOG] SoundI::release                          :     HiHat Timer (000000005995C928)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524283A8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052484658)
+[LOG] SoundI::release                          : release subsounds. (0000000052484658)
+[LOG] SoundI::release                          :     Pizz Desend Em Scale (000000005246DCD8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052484658)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052485628)
+[LOG] SoundI::release                          : release subsounds. (0000000052485628)
+[LOG] SoundI::release                          :     Exlopsive Drums (000000005246E4F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052485628)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052654508)
+[LOG] SoundI::release                          : release subsounds. (0000000052654508)
+[LOG] SoundI::release                          :     Explosion large demolition trail off_BLASTWAVEFX_31066 (0000000059810038)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052654508)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653988)
+[LOG] SoundI::release                          : release subsounds. (0000000052653988)
+[LOG] SoundI::release                          :     M1928A1_Thompson_Submachine_Gun_.45cal_0.3m_to_side_ORTF_Burst_of_four_x_1 (000000005980F818)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653988)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427B08)
+[LOG] SoundI::release                          : release subsounds. (0000000052427B08)
+[LOG] SoundI::release                          :     M1928A1_Thompson_Submachine_Gun_.45cal_300m_in_front_Burst_of_four_x_1 (000000005995C5E8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427B08)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428968)
+[LOG] SoundI::release                          : release subsounds. (0000000052428968)
+[LOG] SoundI::release                          :     M1918_Browning_Automatic_Rifle_.30cal_0.1m_to_right_Double_shots_x_1 (000000005995AF28)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428968)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052485908)
+[LOG] SoundI::release                          : release subsounds. (0000000052485908)
+[LOG] SoundI::release                          :     M1918_Browning_Automatic_Rifle_.30cal_300m_in_front_Double_shots_x_1 (000000005246EB78)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052485908)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052654398)
+[LOG] SoundI::release                          : release subsounds. (0000000052654398)
+[LOG] SoundI::release                          :     M1919A4_Browning_Machine_Gun_.30cal_200m_left_behind_blanks_Triple_shots_x_1 (00000000598101D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052654398)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524270F8)
+[LOG] SoundI::release                          : release subsounds. (00000000524270F8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.01 (000000005995BC28)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524270F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524280C8)
+[LOG] SoundI::release                          : release subsounds. (00000000524280C8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.02 (000000005995C108)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524280C8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427DE8)
+[LOG] SoundI::release                          : release subsounds. (0000000052427DE8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.03 (000000005246D178)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427DE8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524273D8)
+[LOG] SoundI::release                          : release subsounds. (00000000524273D8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.04 (000000005995B8E8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524273D8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428688)
+[LOG] SoundI::release                          : release subsounds. (0000000052428688)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.05 (000000005246D318)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428688)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524287F8)
+[LOG] SoundI::release                          : release subsounds. (00000000524287F8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.06 (000000005246E698)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524287F8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052652F78)
+[LOG] SoundI::release                          : release subsounds. (0000000052652F78)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.07 (0000000059810518)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052652F78)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653AF8)
+[LOG] SoundI::release                          : release subsounds. (0000000052653AF8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.08 (000000005980F678)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653AF8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000526536A8)
+[LOG] SoundI::release                          : release subsounds. (00000000526536A8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.09 (0000000059810378)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000526536A8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052426F88)
+[LOG] SoundI::release                          : release subsounds. (0000000052426F88)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.10 (000000005995B748)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052426F88)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Siren (0000000059770288)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770288)
+[LOG] SoundI::release                          :     Siren (0000000059CD2F58)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770288)
+[LOG] SoundI::release                          :     Siren (000000005976FD78)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770288)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : HWY10_AMBIENCE_DISTANT HIGHWAY_Low traffic_Near interchange_2 (000000005976FF28)
+[LOG] SoundI::release                          : remove stream samples. (000000005976FF28)
+[LOG] SoundI::release                          :     HWY10_AMBIENCE_DISTANT HIGHWAY_Low traffic_Near interchange_2 (000000005246E1B8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000005976FF28)
+[LOG] SoundI::release                          :     HWY10_AMBIENCE_DISTANT HIGHWAY_Low traffic_Near interchange_2 (0000000059770798)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000005976FF28)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : FuzzBass (0000000059770438)
+[LOG] SoundI::release                          : remove stream samples. (0000000059770438)
+[LOG] SoundI::release                          :     FuzzBass (0000000059CD3298)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059770438)
+[LOG] SoundI::release                          :     FuzzBass (000000000D8FE588)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059770438)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : bass (00000000597711B8)
+[LOG] SoundI::release                          : remove stream samples. (00000000597711B8)
+[LOG] SoundI::release                          :     bass (0000000059CD3778)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (00000000597711B8)
+[LOG] SoundI::release                          :     bass (000000000D8FEA98)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000597711B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Lead Gutair 1 (000000005A131BB8)
+[LOG] SoundI::release                          : remove stream samples. (000000005A131BB8)
+[LOG] SoundI::release                          :     Lead Gutair 1 (0000000059CD23F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000005A131BB8)
+[LOG] SoundI::release                          :     Lead Gutair 1 (000000005A1325D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000005A131BB8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Staccato Violin  (000000000D8FE228)
+[LOG] SoundI::release                          : remove stream samples. (000000000D8FE228)
+[LOG] SoundI::release                          :     Staccato Violin  (0000000059CD2258)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000000D8FE228)
+[LOG] SoundI::release                          :     Staccato Violin  (000000005A131F18)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000000D8FE228)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Ryth Guitar (000000000D8FE8E8)
+[LOG] SoundI::release                          : remove stream samples. (000000000D8FE8E8)
+[LOG] SoundI::release                          :     Ryth Guitar (0000000059CD2DB8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (000000000D8FE8E8)
+[LOG] SoundI::release                          :     Ryth Guitar (000000000D8FEC48)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (000000000D8FE8E8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          : Ethnic Purcusion  (0000000059771008)
+[LOG] SoundI::release                          : remove stream samples. (0000000059771008)
+[LOG] SoundI::release                          :     Ethnic Purcusion  (0000000059CD30F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release subsounds. (0000000059771008)
+[LOG] SoundI::release                          :     Ethnic Purcusion  (000000000D8FDEC8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000059771008)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653538)
+[LOG] SoundI::release                          : release subsounds. (0000000052653538)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.11 (000000005980F9B8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653538)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427828)
+[LOG] SoundI::release                          : release subsounds. (0000000052427828)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.12 (000000005995AD88)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427828)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052484378)
+[LOG] SoundI::release                          : release subsounds. (0000000052484378)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.13 (000000005246E9D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052484378)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653F48)
+[LOG] SoundI::release                          : release subsounds. (0000000052653F48)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.14 (000000005980F4D8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653F48)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653818)
+[LOG] SoundI::release                          : release subsounds. (0000000052653818)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.16 (000000005980F198)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653818)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427C78)
+[LOG] SoundI::release                          : release subsounds. (0000000052427C78)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.17 (000000005995BA88)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427C78)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000526533C8)
+[LOG] SoundI::release                          : release subsounds. (00000000526533C8)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.18 (000000005995B5A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000526533C8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428C48)
+[LOG] SoundI::release                          : release subsounds. (0000000052428C48)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.19 (000000005246ED18)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428C48)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052484938)
+[LOG] SoundI::release                          : release subsounds. (0000000052484938)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.20 (000000005246D998)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052484938)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000526540B8)
+[LOG] SoundI::release                          : release subsounds. (00000000526540B8)
+[LOG] SoundI::release                          :     M1919A4_Browning_Machine_Gun_.30cal_5m_behind_ORTF_blanks_Triple_shots_x_1 (000000005995CAC8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000526540B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427548)
+[LOG] SoundI::release                          : release subsounds. (0000000052427548)
+[LOG] SoundI::release                          :     170916_Fireworks-Amb-Blasts-Singles-Far.15 (000000005995BDC8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427548)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052427F58)
+[LOG] SoundI::release                          : release subsounds. (0000000052427F58)
+[LOG] SoundI::release                          :     170806_FootstepsOnHardTiles_SoftTrainer_Male01 (000000005995C2A8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052427F58)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428AD8)
+[LOG] SoundI::release                          : release subsounds. (0000000052428AD8)
+[LOG] SoundI::release                          :     170806_FootstepsOnHardTiles_SoftTrainer_Male02 (000000005995B268)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428AD8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000526530E8)
+[LOG] SoundI::release                          : release subsounds. (00000000526530E8)
+[LOG] SoundI::release                          :     170806_FootstepsOnHardTiles_SoftTrainer_Male03 (000000005995B408)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000526530E8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428DB8)
+[LOG] SoundI::release                          : release subsounds. (0000000052428DB8)
+[LOG] SoundI::release                          :     170806_FootstepsOnHardTiles_SoftTrainer_Male04 (000000005246DB38)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428DB8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428238)
+[LOG] SoundI::release                          : release subsounds. (0000000052428238)
+[LOG] SoundI::release                          :     170806_FootstepsOnHardTiles_SoftTrainer_Male05 (000000005995C448)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428238)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052653258)
+[LOG] SoundI::release                          : release subsounds. (0000000052653258)
+[LOG] SoundI::release                          :     electricLoop (000000005995B0C8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052653258)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524844E8)
+[LOG] SoundI::release                          : release subsounds. (00000000524844E8)
+[LOG] SoundI::release                          :     beamtest (000000005246D4B8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524844E8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000524276B8)
+[LOG] SoundI::release                          : release subsounds. (00000000524276B8)
+[LOG] SoundI::release                          :     SingleFire1 (000000005246D7F8)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000524276B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (00000000526529B8)
+[LOG] SoundI::release                          : release subsounds. (00000000526529B8)
+[LOG] SoundI::release                          :     SingleFire2 (0000000059810858)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (00000000526529B8)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052428518)
+[LOG] SoundI::release                          : release subsounds. (0000000052428518)
+[LOG] SoundI::release                          :     mECH1 (000000005995C788)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052428518)
+[LOG] SoundI::release                          : done
+[LOG] SoundI::release                          :  (0000000052485BE8)
+[LOG] SoundI::release                          : release subsounds. (0000000052485BE8)
+[LOG] SoundI::release                          :     mECH2 (000000005246D658)
+[LOG] SoundI::release                          :     done
+[LOG] SoundI::release                          : release codec. (0000000052485BE8)
+[LOG] SoundI::release                          : done
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
 [LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
@@ -49,3 +679,10 @@
 [LOG] SystemI::close                           : Free channel pool.
 [LOG] SystemI::close                           : done.
 
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] Manager::readBank                        : fileversion = 88, compatVersion = 86 (oldest = 44, newest = 88)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
