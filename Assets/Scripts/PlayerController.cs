@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float speed = 1;
+
     public float rotationSpeed = 1;
     public float hits = 0;
     public float lives = 2;
@@ -25,7 +26,10 @@ public class PlayerController : MonoBehaviour {
         if (hasLevelEnded) {
             return;
         }
+ 
 
+             
+     
 		float horizontal = Input.GetAxis(Constants.PLAYER_HORIZONTAL_INPUT) * speed;
 		float vertical = Input.GetAxis(Constants.PLAYER_VERTICAL_INPUT) * speed;
 

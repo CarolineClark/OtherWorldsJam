@@ -18,23 +18,23 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 0
     axis: 0
     joyNum: 2
   - serializedVersion: 3
     m_Name: VerticalPlayer
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: down
-    positiveButton: up
-    altNegativeButton: s
-    altPositiveButton: w
+    negativeButton: up
+    positiveButton: down
+    altNegativeButton: w
+    altPositiveButton: s
     gravity: 0
     dead: 0.19
     sensitivity: 1
     snap: 0
     invert: 1
-    type: 2
+    type: 0
     axis: 1
     joyNum: 2
   - serializedVersion: 3
@@ -162,7 +162,7 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 2
+    type: 1
     axis: 0
     joyNum: 1
   - serializedVersion: 3
@@ -177,8 +177,8 @@ InputManager:
     dead: 0.19
     sensitivity: 1
     snap: 0
-    invert: 1
-    type: 2
+    invert: 0
+    type: 1
     axis: 1
     joyNum: 1
   - serializedVersion: 3
@@ -186,7 +186,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: joystick button 0
+    positiveButton: mouse 1
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -194,7 +194,7 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
+    type: 1
     axis: 0
     joyNum: 1
   - serializedVersion: 3
